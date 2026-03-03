@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prince Gupta — Full Stack Developer & UI/UX Designer</title>
+    <meta name="description"
+        content="Prince Gupta — Full Stack Developer & UI/UX Designer building intelligent digital experiences with Python, JavaScript, and cutting-edge design tools." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">PG</div>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loaderProgress"></div>
+            </div>
+            <p class="loader-text">Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Prince<span class="accent">Gupta</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-sm btn-primary">Let's Talk</a>
+            <a href="resume.html" target="_blank" class="btn btn-sm btn-ghost resume-btn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                    <polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+                Resume
+            </a>
+            <button class="hamburger" id="hamburger"
+                aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#experience" class="mobile-link">Experience</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-badge reveal-up delay-1"><span class="badge-dot"></span>Available for opportunities</div>
+            <h1 class="hero-headline reveal-up delay-2">
+                I Build<br />
+                <span class="gradient-text" id="typedText"></span><span class="cursor-blink">|</span><br />
+                Digital Experiences.
+            </h1>
+            <p class="hero-sub reveal-up delay-3">Full Stack Developer &amp; UI/UX Designer crafting seamless,
+                intelligent products<br class="hide-mobile" /> that blend performance with pixel-perfect design.</p>
+            <div class="hero-ctas reveal-up delay-4">
+                <a href="#projects" class="btn btn-primary magnetic">
+                    <span>View Work</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost magnetic">Contact Me</a>
+                <a href="resume.html" target="_blank" class="btn btn-ghost magnetic">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    Resume
+                </a>
+            </div>
+            <div class="hero-stats reveal-up delay-5">
+                <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Exp.</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Projects Built</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Technologies</span></div>
+            </div>
+        </div>
+        <div class="scroll-indicator reveal-up delay-5">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-label reveal-up">About Me</div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title reveal-up">Crafting the Future,<br /><span class="gradient-text">One Line
+                            at a Time</span></h2>
+                    <p class="about-para reveal-up delay-1">I'm Prince Gupta — a Full Stack Developer and UI/UX Designer
+                        based in India, passionate about building intelligent digital products that marry clean code
+                        with exceptional design.</p>
+                    <p class="about-para reveal-up delay-2">I specialize in Python, JavaScript, systems programming in
+                        C/C++, and creating stunning interfaces with Figma and Framer. I believe technology should feel
+                        magical — fast, intuitive, and beautiful.</p>
+                    <div class="about-chips reveal-up delay-3">
+                        <span class="chip">Problem Solver</span>
+                        <span class="chip">System Thinker</span>
+                        <span class="chip">Design Enthusiast</span>
+                        <span class="chip">Open Source</span>
+                    </div>
+                </div>
+                <div class="about-visual reveal-up delay-2">
+                    <div class="avatar-card">
+                        <div class="avatar-glow"></div>
+                        <div class="avatar-monogram">PG</div>
+                        <div class="avatar-ring ring-1"></div>
+                        <div class="avatar-ring ring-2"></div>
+                        <div class="avatar-ring ring-3"></div>
+                        <div class="floating-badge fb-1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <polyline points="16 18 22 12 16 6" stroke="#7c3aed" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <polyline points="8 6 2 12 8 18" stroke="#7c3aed" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Working onFull Stack Development
+                        </div>
+                        <div class="floating-badge fb-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="#06b6d4" stroke-width="2" />
+                                <path d="M9 9h6M9 12h4" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            UI/UX Designer
+                        </div>
+                        <div class="floating-badge fb-3">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="9" stroke="#f59e0b" stroke-width="2" />
+                                <path d="M12 8v4l3 3" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            Always Learning
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-label reveal-up">Featured Work</div>
+            <h2 class="section-title reveal-up">Projects That <span class="gradient-text">Ship</span></h2>
+            <p class="section-sub reveal-up delay-1">Handcrafted digital products built for real impact.</p>
+            <div class="projects-grid">
+                <div class="project-card featured reveal-up delay-1">
+                    <div class="project-card-bg"></div>
+                    <div class="project-card-content">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="#a78bfa"
+                                        stroke-width="1.5" />
+                                    <path d="M8 21h8M12 17v4" stroke="#a78bfa" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                    <path d="M10 9l2-2 2 2M12 7v5" stroke="#06b6d4" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="project-badge">Featured</span>
+                        </div>
+                        <h3 class="project-title">Content Studio AI</h3>
+                        <p class="project-desc">An AI-powered content automation platform enabling video production,
+                            subtitle generation, thumbnail automation, and full engagement workflows — built for modern
+                            creators.</p>
+                        <div class="project-tags">
+                            <span class="tag">AI/ML</span><span class="tag">Python</span><span
+                                class="tag">JavaScript</span><span class="tag">Automation</span>
+                        </div>
+                        <div class="project-preview">
+                            <div class="preview-mockup">
+                                <div class="preview-bar">
+                                    <span></span><span></span><span></span>
+                                    <div class="preview-url">contentstudioai.netlify.app</div>
+                                </div>
+                                <div class="preview-body">
+                                    <div class="preview-sidebar"></div>
+                                    <div class="preview-main">
+                                        <div class="preview-row w-80"></div>
+                                        <div class="preview-row w-60"></div>
+                                        <div class="preview-grid-cards">
+                                            <div class="preview-mini-card pmc-1"></div>
+                                            <div class="preview-mini-card pmc-2"></div>
+                                            <div class="preview-mini-card pmc-3"></div>
+                                        </div>
+                                        <div class="preview-row w-40"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://contentstudioai.netlify.app" target="_blank" rel="noopener"
+                                class="project-btn primary magnetic">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Live Demo
+                            </a>
+                            <a href="case-study.html" class="project-btn ghost magnetic">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                </svg>
+                                Case Study
+                            </a>
+                            <a href="https://github.com/Princeg0210" target="_blank" rel="noopener"
+                                class="project-btn ghost magnetic">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up delay-2">
+                    <div class="project-card-bg"></div>
+                    <div class="project-card-content">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="9" stroke="#06b6d4" stroke-width="1.5" />
+                                    <path d="M12 8v4l2 2" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="project-badge wip">In Progress</span>
+                        </div>
+                        <h3 class="project-title">Next Big Thing</h3>
+                        <p class="project-desc">Something exciting is being crafted. A full-stack platform pushing the
+                            boundaries of what's possible. Coming soon — stay tuned.</p>
+                        <div class="project-tags"><span class="tag">Full Stack</span><span
+                                class="tag">Python</span><span class="tag">MySQL</span></div>
+                        <div class="project-links">
+                            <a href="https://github.com/Princeg0210" target="_blank" rel="noopener"
+                                class="project-btn ghost magnetic">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                Follow on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-label reveal-up">Expertise</div>
+            <h2 class="section-title reveal-up">The Tech Stack <span class="gradient-text">Behind the Magic</span></h2>
+            <p class="section-sub reveal-up delay-1">Tools and technologies I wield to bring ideas to life.</p>
+            <div class="skills-grid reveal-up delay-2">
+                <div class="skill-card" data-skill="Python">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36">
+                            <path
+                                d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.031v-2.867s-.109-3.402 3.35-3.402h5.766s3.24.052 3.24-3.13V3.13S18.28 0 11.914 0zm-3.21 1.81a1.049 1.049 0 110 2.098 1.049 1.049 0 010-2.098z"
+                                fill="#3776AB" />
+                            <path
+                                d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.1S24 18.211 24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.031v2.867s.109 3.402-3.35 3.402H9.45s-3.24-.052-3.24 3.13v5.403S5.72 24 12.086 24zm3.21-1.81a1.049 1.049 0 110-2.098 1.049 1.049 0 010 2.098z"
+                                fill="#FFD43B" />
+                        </svg></div>
+                    <span class="skill-name">Python</span>
+                    <div class="skill-glow"></div>
+                </div>
+                <div class="skill-card" data-skill="JavaScript">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36">
+                            <rect width="24" height="24" rx="3" fill="#F7DF1E" />
+                            <path
+                                d="M5.5 18.5l1.6-1c.3.55.6.95 1.2.95.6 0 .97-.23.97-1.13V12h2v5.37c0 1.87-1.1 2.72-2.7 2.72-1.44 0-2.28-.75-2.7-1.65l1.63-.94zm7.25.28l1.6-.98c.42.68.97 1.18 1.93 1.18.81 0 1.33-.41 1.33-1 0-.69-.53-.93-1.43-1.33l-.49-.21c-1.42-.6-2.36-1.36-2.36-2.96 0-1.47 1.12-2.59 2.87-2.59 1.25 0 2.14.43 2.79 1.57l-1.53.98c-.34-.6-.7-.84-1.26-.84-.58 0-.94.37-.94.84 0 .59.37.83 1.22 1.2l.49.21c1.67.71 2.62 1.44 2.62 3.08 0 1.76-1.38 2.73-3.24 2.73-1.81 0-2.98-.86-3.55-1.98z"
+                                fill="#000" />
+                        </svg></div>
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-glow"></div>
+                </div>
+                <div class="skill-card" data-skill="MySQL">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none">
+                            <ellipse cx="12" cy="6" rx="10" ry="3.5" stroke="#4479A1" stroke-width="1.5" />
+                            <path d="M2 6v5c0 1.933 4.477 3.5 10 3.5S22 12.933 22 11V6" stroke="#4479A1"
+                                stroke-width="1.5" />
+                            <path d="M2 11v5c0 1.933 4.477 3.5 10 3.5S22 17.933 22 16v-5" stroke="#4479A1"
+                                stroke-width="1.5" />
+                        </svg></div>
+                    <span class="skill-name">MySQL</span>
+                    <div class="skill-glow"></div>
+                </div>
+                <div class="skill-card" data-skill="C/C++">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36">
+                            <path
+                                d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.109-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.109-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"
+                                fill="#00599C" />
+                        </svg></div>
+                    <span class="skill-name">C / C++</span>
+                    <div class="skill-glow"></div>
+                </div>
+                <div class="skill-card" data-skill="OOP">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none">
+                            <rect x="2" y="6" width="9" height="12" rx="2" stroke="#a78bfa" stroke-width="1.5" />
+                            <rect x="13" y="2" width="9" height="9" rx="2" stroke="#06b6d4" stroke-width="1.5" />
+                            <rect x="13" y="13" width="9" height="9" rx="2" stroke="#f59e0b" stroke-width="1.5" />
+                            <path d="M11 12h2" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" />
+                        </svg></div>
+                    <span class="skill-name">OOP</span>
+                    <div class="skill-glow"></div>
+                </div>
+                <div class="skill-card" data-skill="Figma">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36">
+                            <path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z" fill="#0ACF83" />
+                            <path d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z" fill="#A259FF" />
+                            <path d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z" fill="#F24E1E" />
+                            <path d="M12 0h4c2.208 0 4 1.792 4 4s-1.792 4-4 4h-4V0z" fill="#FF7262" />
+                            <path d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z" fill="#1ABCFE" />
+                        </svg></div>
+                    <span class="skill-name">Figma</span>
+                    <div class="skill-glow"></div>
+                </div>
+                <div class="skill-card" data-skill="Framer">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none">
+                            <path d="M4 4h16v8H4V4z" fill="#0055FF" />
+                            <path d="M4 12h8l8 8H4v-8z" fill="#0044CC" />
+                            <path d="M4 20h8v4H4v-4z" fill="#0033AA" />
+                        </svg></div>
+                    <span class="skill-name">Framer</span>
+                    <div class="skill-glow"></div>
+                </div>
+                <div class="skill-card" data-skill="Git">
+                    <div class="skill-icon"><svg viewBox="0 0 24 24" width="36" height="36">
+                            <path
+                                d="M23.546 10.93L13.067.452c-.603-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.608-.406-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"
+                                fill="#F05032" />
+                        </svg></div>
+                    <span class="skill-name">Git</span>
+                    <div class="skill-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience section" id="experience">
+        <div class="container">
+            <div class="section-label reveal-up">Journey</div>
+            <h2 class="section-title reveal-up">Experience &amp; <span class="gradient-text">Milestones</span></h2>
+            <div class="timeline">
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2024 — Present</span>
+                        <h3 class="timeline-title">Full Stack Developer</h3>
+                        <p class="timeline-sub">Independent / Freelance</p>
+                        <p class="timeline-desc">Building end-to-end digital products — from backend APIs with Python to
+                            polished frontends. Delivered Content Studio AI, an AI-powered content automation platform.
+                        </p>
+                        <div class="timeline-tags"><span class="tag">Python</span><span
+                                class="tag">JavaScript</span><span class="tag">MySQL</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2023 — 2024</span>
+                        <h3 class="timeline-title">UI/UX Designer</h3>
+                        <p class="timeline-sub">Design Practice</p>
+                        <p class="timeline-desc">Honed expertise in interface design, prototyping, and user experience.
+                            Mastered Figma and Framer to craft pixel-perfect, interactive design systems.</p>
+                        <div class="timeline-tags"><span class="tag">Figma</span><span class="tag">Framer</span><span
+                                class="tag">Prototyping</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2022 — 2023</span>
+                        <h3 class="timeline-title">Systems &amp; Backend Engineering</h3>
+                        <p class="timeline-sub">Academic &amp; Personal Projects</p>
+                        <p class="timeline-desc">Deep-dived into C, C++, and Object-Oriented Programming. Built core
+                            systems, data structures, and algorithms to establish a strong technical foundation.</p>
+                        <div class="timeline-tags"><span class="tag">C</span><span class="tag">C++</span><span
+                                class="tag">OOP</span><span class="tag">DSA</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GITHUB STATS -->
+    <section class="github-stats section" id="github">
+        <div class="container">
+            <div class="section-label reveal-up">Open Source</div>
+            <h2 class="section-title reveal-up">GitHub <span class="gradient-text">Activity</span></h2>
+            <p class="section-sub reveal-up delay-1">A live look at my code activity and public repositories.</p>
+            <div class="gh-profile-card reveal-up delay-1">
+                <div class="gh-card-left">
+                    <div class="gh-avatar">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="gh-username">Princeg0210</h3>
+                        <p class="gh-bio" id="ghBio">Full Stack Developer &amp; UI/UX Designer</p>
+                    </div>
+                </div>
+                <div class="gh-stats-row">
+                    <div class="gh-stat"><span class="gh-stat-num" id="ghRepos">—</span><span
+                            class="gh-stat-label">Repos</span></div>
+                    <div class="gh-stat"><span class="gh-stat-num" id="ghFollowers">—</span><span
+                            class="gh-stat-label">Followers</span></div>
+                    <div class="gh-stat"><span class="gh-stat-num" id="ghFollowing">—</span><span
+                            class="gh-stat-label">Following</span></div>
+                </div>
+                <a href="https://github.com/Princeg0210" target="_blank" rel="noopener"
+                    class="btn btn-ghost gh-view-btn">
+                    View Profile
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </a>
+            </div>
+            <div class="gh-repos-grid" id="ghReposGrid">
+                <div class="gh-repo-skeleton"></div>
+                <div class="gh-repo-skeleton"></div>
+                <div class="gh-repo-skeleton"></div>
+            </div>
+        </div>
+    </section>
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-label reveal-up">Get In Touch</div>
+            <h2 class="section-title reveal-up">Let's Build Something <span class="gradient-text">Extraordinary</span>
+            </h2>
+            <p class="section-sub reveal-up delay-1">Have a project in mind? Let's talk about how we can create
+                something amazing together.</p>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                    stroke="#a78bfa" stroke-width="1.5" />
+                                <polyline points="22,6 12,13 2,6" stroke="#a78bfa" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:Gprincegupta0210@gmail.com"
+                                class="contact-value">Gprincegupta0210@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Princeg0210" target="_blank" rel="noopener"
+                            class="social-link magnetic" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/prince-gupta-550ba3304" target="_blank" rel="noopener"
+                            class="social-link magnetic" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form reveal-right" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="hello@example.com" required
+                            autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary magnetic" id="submitBtn">
+                        <span>Send Message</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </button>
+                    <p class="form-success" id="formSuccess">✨ Message sent! I'll get back to you soon.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-brand">Prince<span class="accent">Gupta</span></p>
+                <p class="footer-copy">© 2026 Prince Gupta. Crafted with passion.</p>
+                <div class="footer-links">
+                    <a href="#hero">Top</a>
+                    <a href="#projects">Work</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
