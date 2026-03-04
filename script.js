@@ -135,7 +135,7 @@ document.addEventListener('mousemove', (e) => {
   if (orb2) orb2.style.transform = `translate(${-nx * 20}px, ${-ny * 20}px)`;
 }, { passive: true });
 
-/* ── Contact Form ── */
+/* ── Contact Form → opens Mail app ── */
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 const submitBtn = document.getElementById('submitBtn');
@@ -143,17 +143,25 @@ const submitBtn = document.getElementById('submitBtn');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = 'Sending...';
-    setTimeout(() => {
-      contactForm.reset();
-      formSuccess.classList.add('visible');
-      submitBtn.querySelector('span').textContent = 'Send Message';
-      submitBtn.disabled = false;
-      setTimeout(() => formSuccess.classList.remove('visible'), 4000);
-    }, 1000);
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailto = `mailto:Gprincegupta0210@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+
+    contactForm.reset();
+    formSuccess.textContent = '✅ Opening your mail app — just hit Send!';
+    formSuccess.style.color = '#22c55e';
+    formSuccess.classList.add('visible');
+    setTimeout(() => formSuccess.classList.remove('visible'), 5000);
   });
 }
+
 
 /* ── Skill card 3D tilt ── */
 document.querySelectorAll('.skill-card').forEach(card => {
@@ -205,14 +213,14 @@ async function loadGitHubStats() {
 
     if (!userRes.ok || !reposRes.ok) throw new Error('API error');
 
-    const user  = await userRes.json();
+    const user = await userRes.json();
     const repos = await reposRes.json();
 
     // Update profile stats
     const el = (id) => document.getElementById(id);
-    if (el('ghRepos'))     el('ghRepos').textContent     = user.public_repos ?? '—';
-    if (el('ghFollowers')) el('ghFollowers').textContent = user.followers    ?? '—';
-    if (el('ghFollowing')) el('ghFollowing').textContent = user.following    ?? '—';
+    if (el('ghRepos')) el('ghRepos').textContent = user.public_repos ?? '—';
+    if (el('ghFollowers')) el('ghFollowers').textContent = user.followers ?? '—';
+    if (el('ghFollowing')) el('ghFollowing').textContent = user.following ?? '—';
     if (el('ghBio') && user.bio) el('ghBio').textContent = user.bio;
 
     // Render repo cards
