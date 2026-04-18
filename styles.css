@@ -1100,6 +1100,24 @@ a {
   flex: 1;
 }
 
+.preview-image-container {
+  height: 130px;
+  overflow: hidden;
+  position: relative;
+  background: #060608;
+}
+
+.preview-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--transition);
+}
+
+.project-card:hover .preview-image-container img {
+  transform: scale(1.05);
+}
+
 .preview-mini-card {
   flex: 1;
   border-radius: 4px;
